@@ -29,7 +29,7 @@ function loginController(req, res) {
                 res.status(200).send({
                     message: "Login Successful",
                     accessToken: generateToken(element),
-                    user: element
+                    user: [element._id, element.email]
                 });
             }
         });
