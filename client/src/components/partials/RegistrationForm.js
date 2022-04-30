@@ -51,9 +51,6 @@ const RegistrationForm = () => {
                     <button type="submit" onClick={handleSubmit}>Sign Up</button>
                 </form>
             </div>
-            <div className="loginButton">
-                <button><a href="/login">Log into Account</a></button>
-            </div>
         </div>
     );
 }

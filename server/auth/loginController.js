@@ -6,7 +6,7 @@ function generateToken(user) {
     const payload = {
         subject: user.id,
         email: user.email,
-        password: user.password,
+        id: user._id
     };
     const options = {
         expiresIn: '1d'
@@ -16,7 +16,6 @@ function generateToken(user) {
 
 
 function loginController(req, res) {
-    console.log(req.body);
     const { email, password } = req.body;
     const user = {
         email,
@@ -27,9 +26,7 @@ function loginController(req, res) {
         data.forEach(element => {
             if (element.email === user.email && element.password === user.password) {
                 res.status(200).send({
-                    message: "Login Successful",
-                    accessToken: generateToken(element),
-                    user: [element._id, element.email]
+                    accessToken: generateToken(element)
                 });
             }
         });

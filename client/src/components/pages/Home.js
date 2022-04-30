@@ -1,12 +1,14 @@
-import Header from "../partials/Header";
-import { Outlet, Link } from "react-router-dom";
+import Friends from "../partials/Friends";
 
 const Home = () => {
     return (
         <div className="home">
-            <Header />
-            <div className="homeContent">
-                <Outlet />
+            <Friends/>
+            <div className="conversation">
+
+            </div>
+            <div className="selectedFriend">
+
             </div>
         </div>
     );

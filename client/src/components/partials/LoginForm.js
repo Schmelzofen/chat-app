@@ -38,9 +38,6 @@ const LoginForm = () => {
             <div className="forgotPassword">
                 <a href="/forgotpassword">Forgot Password?</a>
             </div>
-            <div className="createAccount">
-                <button><a href="/register">Create a New Account</a></button>
-            </div>
         </div>
     );
 }

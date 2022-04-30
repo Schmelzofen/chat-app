@@ -1,4 +1,5 @@
 const { loginController } = require("../auth/loginController");
+const { registerController } = require("../auth/registerController");
 
 const routes = (app) => {
     app.route("/")
@@ -7,6 +8,8 @@ const routes = (app) => {
         });
     app.route("/api/login")
         .post(loginController)
+    app.route("/api/register")
+        .post(registerController)
 }
 
 module.exports = {

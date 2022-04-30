@@ -3,6 +3,8 @@ import './App.scss';
 import Auth from './components/pages/Auth';
 import Home from './components/pages/Home';
 
+import Header from "./components/partials/Header";
+
 import {
   BrowserRouter,
   Routes,
@@ -15,14 +17,15 @@ import { useContext } from 'react';
 function App() {
   const userAuth = useContext(UserContext);
 
-  console.log(userAuth.token);
-
   return (
     <div className="App">
       {!userAuth.token ? <Auth /> :
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </>
       }
     </div>
   );
