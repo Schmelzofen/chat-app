@@ -1,4 +1,4 @@
-import {useState, useCallback} from "react";
+import { useState, useCallback } from "react";
 
 export const useHttpClient = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -32,5 +32,5 @@ export const useHttpClient = () => {
         setError(null);
     };
 
-    return {isLoading, error, sendRequest, clearError};
+    return { isLoading, error, sendRequest, clearError };
 }

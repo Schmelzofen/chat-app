@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import authService from "../services/auth.service";
+import UserContext from "../store/contextProvider";
 
 const LoginForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    const authContext = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -17,8 +20,8 @@ const LoginForm = () => {
                 email,
                 password,
             };
-            console.log(user);
-            authService.login(user.email, user.password)
+            console.log("LOGGING IN", user);
+            authContext.login(user)
             window.location.reload();
         }
     }

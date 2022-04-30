@@ -1,21 +1,29 @@
-import { useEffect, useState } from 'react';
 import './App.scss';
 
 import Auth from './components/pages/Auth';
 import Home from './components/pages/Home';
-import authService from './components/services/auth.service';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import UserContext from './components/store/contextProvider';
+import { useContext } from 'react';
 
 function App() {
-  // get current user from localstorage
-  const [currentUser, setCurrentUser] = useState("");
+  const userAuth = useContext(UserContext);
 
-  useEffect(() => {
-    setCurrentUser(authService.getCurrentUser());
-  }, []);
+  console.log(userAuth.token);
 
   return (
     <div className="App">
-      {!currentUser ? <Auth /> : <Home />}
+      {!userAuth.token ? <Auth /> :
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      }
     </div>
   );
 }
