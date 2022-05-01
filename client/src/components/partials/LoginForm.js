@@ -30,7 +30,7 @@ const LoginForm = () => {
         <div className="loginContainer">
             <div className="login">
                 <form>
-                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button type="submit" onClick={handleSubmit}>Log In</button>
                 </form>
