@@ -2,6 +2,7 @@ import './App.scss';
 
 import Auth from './components/pages/Auth';
 import Home from './components/pages/Home';
+import Profilepage from "./components/pages/Profilepage";
 
 import Header from "./components/partials/Header";
 
@@ -24,6 +25,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/profile/:id" element={<Profilepage />} />
           </Routes>
         </>
       }

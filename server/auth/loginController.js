@@ -6,7 +6,8 @@ function generateToken(user) {
     const payload = {
         subject: user.id,
         email: user.email,
-        id: user._id
+        id: user._id,
+        image: user.image
     };
     const options = {
         expiresIn: '1d'

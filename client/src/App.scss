@@ -8,6 +8,10 @@ body {
     background: #F0F2F5;
 }
 
+button{
+    cursor: pointer;
+}
+
 .headerContainer{
     display: flex;
     justify-content: space-between;
@@ -39,7 +43,6 @@ header div a {
         padding: 0 10px;
         height: 30px;
         width: 300px;
-        background-color: #F0F2F5;
         color: #333;
         font-size: 14px;
         outline: none;
@@ -47,11 +50,20 @@ header div a {
 }
 
 .headerIcons{
+    display: flex;
+    align-items: center;
     span{
         background: white;
         border-radius: 50%;
         padding: 3.5px 4px 6px 6px;
     }
+}
+
+#logoutIcon {
+    font-size: 24px;
+    color: white;
+    margin: 0 15px 0 0;
+    cursor: pointer;
 }
 
 .authFlex {
@@ -83,7 +95,9 @@ header div a {
     }
 }
 
+//
 // Login Registration Form Styles
+//
 
 .formContainer{
     background: white;
@@ -156,3 +170,60 @@ header div a {
         font-weight: bold;
     }
 }
+
+//////
+
+//
+// Profile Page
+//
+
+.profileHeader{
+    h1{
+        font-size: 48px;
+        text-align: center;
+        color: #2675EE;
+        margin: 10px 0;
+    }
+}
+
+// Forms in profile page
+.changePassword, .changeEmail{
+    > button {
+        width: 15%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 9px;
+        background: #2675EE;
+        color: white;
+        font-weight: bold;
+    }
+    margin: 25px 0 0 25px;
+    h2{
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: #2675EE;
+    }
+    form{
+        input{
+            display: block;
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+        }
+        button{
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            background: #2675EE;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+
