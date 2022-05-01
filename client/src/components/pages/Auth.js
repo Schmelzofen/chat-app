@@ -10,9 +10,11 @@ const Auth = () => {
     return (
         <div className="AuthContainer">
             <Hero />
-            {isLogin ? <LoginForm /> : <RegistrationForm />}
-            <div className="createAccount">
-                <button onClick={() => setIsLogin(!isLogin)}>{isLogin ? "Create a New Account" : "Log into Account"}</button>
+            <div className="formContainer">
+                {isLogin ? <LoginForm /> : <RegistrationForm />}
+                <div className="createAccount">
+                    <button onClick={() => setIsLogin(!isLogin)}>{isLogin ? "Create a New Account" : "Log into Account"}</button>
+                </div>
             </div>
         </div>
     );

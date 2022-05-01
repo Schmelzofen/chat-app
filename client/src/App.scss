@@ -44,3 +44,74 @@ header div a {
     padding: 20px;
     align-items: center;
 }
+
+.hero{
+    h1{
+        color: #2675EE;
+        font-size: 45px;
+    }
+    p{
+        font-size: 22px;
+    }
+}
+
+// Login Registration Form Styles
+
+.formContainer{
+    background: white;
+    border-radius: 9px;
+    padding: 3%;
+}
+
+.login{
+    form{
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            background: #2675EE;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+
+.forgotPassword{
+    display: flex;
+    justify-content: center;
+    a{
+        color: #2675EE;
+        text-decoration: none;
+        text-align: center;
+        margin: 20px 0 0 0;
+    }
+}
+
+.createAccount{
+    display: flex;
+    justify-content: center;
+    a{
+        color: #2675EE;
+        text-decoration: none;
+        text-align: center;
+    }
+    button{
+        width: 50%;
+        padding: 10px;
+        margin: 30px 0 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 9px;
+        background: #42B72A;
+        color: white;
+        font-weight: bold;
+    }
+}
