@@ -15,7 +15,7 @@ const Header = () => {
                 <input type="text" placeholder="Search for people, posts, and more..." />
             </div>
             <div className="headerIcons">
-                <Link to={`/profile/${token.id}`}>Link to Profile</Link>
+                <Link to={`/profile/${token.id}`}><span className="placeholder">👤</span></Link>
             </div>
         </header>
     );

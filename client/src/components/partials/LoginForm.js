@@ -21,7 +21,6 @@ const LoginForm = () => {
                 password,
             };
             authContext.login(user)
-            window.location.reload();
         }
     }
 

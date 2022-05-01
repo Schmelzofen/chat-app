@@ -16,17 +16,42 @@ body {
     height: 60px;
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background:#2675EE;
 }
 
 .headerTitle {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: #333;
 }
 
 header div a {
-    color: #000;
+    color: white;
     text-decoration: none;
+}
+
+.headerSearchbar{
+    display: flex;
+    align-items: center;
+    input{
+        border: none;
+        border-radius: 15px;
+        padding: 0 10px;
+        height: 30px;
+        width: 300px;
+        background-color: #F0F2F5;
+        color: #333;
+        font-size: 14px;
+        outline: none;
+    }
+}
+
+.headerIcons{
+    span{
+        background: white;
+        border-radius: 50%;
+        padding: 3.5px 4px 6px 6px;
+    }
 }
 
 .authFlex {
