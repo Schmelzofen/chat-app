@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from "axios";
+import UserContext from '../store/contextProvider';
 
 const RegistrationForm = () => {
 
@@ -8,6 +9,8 @@ const RegistrationForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+
+    const authContext = useContext(UserContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,36 +21,22 @@ const RegistrationForm = () => {
             const user = {
                 username,
                 email,
-                password: confirmPassword,
+                password
             };
-            console.log(user);
-            axios.post('/api/users/register', user)
-                .then(res => {
-                    console.log(res);
-                    if (res.data.error) {
-                        setError(res.data.error);
-                    } else {
-                        setError('');
-                        setUsername('');
-                        setEmail('');
-                        setPassword('');
-                        setConfirmPassword('');
-                    }
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+            console.log("USER", user);
+            authContext.register(user);
+            window.location.reload();
         }
     }
 
     return (
         <div className="registrationContainer">
             <div className="registration">
-                <form action="/register" method="post">
-                    <input type="text" name="Username" id="username" placeholder="Username" required />
-                    <input type="text" name="Email" id="email" placeholder="Email" required />
-                    <input type="password" name="Password" id="password" placeholder="Password" required />
-                    <input type="password" name="ConfirmPassword" id="confirmpassword" placeholder="Password Again" required />
+                <form>
+                    <input type="text" className="form-control" id="username" aria-describedby="emailHelp" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" className="form-control" id="confirmPassword" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                     <button type="submit" onClick={handleSubmit}>Sign Up</button>
                 </form>
             </div>

@@ -20,7 +20,6 @@ const LoginForm = () => {
                 email,
                 password,
             };
-            console.log("LOGGING IN", user);
             authContext.login(user)
             window.location.reload();
         }

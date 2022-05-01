@@ -25,7 +25,7 @@ function loginController(req, res) {
     userList.then(data => {
         data.forEach(element => {
             if (element.email === user.email && element.password === user.password) {
-                res.status(200).send({
+                return res.status(200).send({
                     accessToken: generateToken(element)
                 });
             }
@@ -34,5 +34,6 @@ function loginController(req, res) {
 }
 
 module.exports = {
-    loginController
+    loginController,
+    generateToken
 }

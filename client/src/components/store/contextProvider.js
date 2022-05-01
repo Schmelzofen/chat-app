@@ -49,6 +49,7 @@ export const UserContextProvider = (props) => {
     }
 
     const register = async (data) => {
+        console.log("going to register user", data)
         try {
             const responseData = await sendRequest(
                 "http://localhost:8000/api/register",
@@ -57,6 +58,7 @@ export const UserContextProvider = (props) => {
                 { "Content-Type": "application/json" }
             );
             if (responseData && !error) {
+                console.log("responseData", responseData);
                 const encodedToken = jwt_decode(responseData.accessToken);
                 setToken(encodedToken);
                 localStorage.setItem("token", JSON.stringify(encodedToken));

@@ -6,7 +6,6 @@ const Header = () => {
     const userAuth = useContext(UserContext);
     let token = JSON.parse(userAuth.token)
 
-
     return (
         <header className="headerContainer">
             <div className="headerTitle">
