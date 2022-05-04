@@ -13,6 +13,7 @@ const UserContext = React.createContext({
     login: () => { },
     logout: () => { },
     register: () => { },
+    getSpecificUser: () => { },
 });
 
 // using the contextProvider
@@ -75,6 +76,23 @@ export const UserContextProvider = (props) => {
         navigate("/");
     }
 
+    const getSpecificUser = async (data) => {
+        try {
+            const responseData = await sendRequest(
+                `http://localhost:8000/api/user/${data}`,
+                "GET",
+                null,
+                { "Content-Type": "application/json" }
+            );
+            if (responseData && !error) {
+                console.log("responseData", responseData);
+                return responseData;
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
     const userData = {
         login,
         logout,
@@ -82,6 +100,7 @@ export const UserContextProvider = (props) => {
         token,
         isLoading,
         error,
+        getSpecificUser
     }
 
     return (

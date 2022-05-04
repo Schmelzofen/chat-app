@@ -21,7 +21,7 @@ const Profilepage = () => {
             ) : (
                 <div className="profilePageContainer">
                     <div className="profileHeader">
-                        <h1>Hey, this is someone else's profile page. 👋</h1>
+                        <h1>Hey, welcome to my page! 😊</h1>
                     </div>
                 </div>
             )}

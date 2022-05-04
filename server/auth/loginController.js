@@ -1,4 +1,4 @@
-const { getUserList } = require("../db/connection");
+const { getUserList, listAllUser } = require("../db/connection");
 var jwt = require('jsonwebtoken');
 
 // function that takes user as an argument and returns a token
@@ -22,7 +22,7 @@ function loginController(req, res) {
         email,
         password
     };
-    let userList = getUserList();
+    let userList = listAllUser();
     userList.then(data => {
         data.forEach(element => {
             if (element.email === user.email && element.password === user.password) {

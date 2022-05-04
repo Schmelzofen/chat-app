@@ -1,15 +1,13 @@
-import Friends from "../partials/Friends";
-
+import SideNavigation from "../partials/SideNavigation";
+import Feed from "../partials/Feed";
+import SelectedFriend from "../partials/SelectedFriend"
 const Home = () => {
+
     return (
-        <div className="home">
-            <Friends/>
-            <div className="conversation">
-
-            </div>
-            <div className="selectedFriend">
-
-            </div>
+        <div className="homeContainer">
+            <SideNavigation />
+            <Feed />
+            <SelectedFriend />
         </div>
     );
 }
