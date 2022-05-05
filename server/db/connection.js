@@ -27,7 +27,6 @@ async function getUserList(req, res) {
     const db = await connectToDB();
     await db.collection("users").find().toArray()
         .then((users) => {
-            console.log(users)
             return res.status(200).send(users)
         })
 }
@@ -37,10 +36,31 @@ async function getSpecificUser(req, res) {
     const db = await connectToDB();
     await db.collection("users").findOne({ _id: req.params.id })
         .then((user) => {
-            console.log(user)
             return res.status(200).send(user)
         })
 }
+
+// API Call - get feed conversation from db
+async function getFeedConversation(req, res) {
+    const db = await connectToDB();
+    await db.collection("chatfeed").find().toArray()
+        .then((conversations) => {
+            return res.status(200).send(conversations)
+        })
+}
+
+// API Call - post message to feed
+async function postFeedConversation(req, res) {
+    const db = await connectToDB();
+    await db.collection("chatfeed").insertOne(req.body)
+        .then((conversations) => {
+            return res.status(200).send(conversations)
+        })
+}
+
+
+
+// NON-API CALL
 
 // return userlist from db connection
 async function listAllUser() {
@@ -54,5 +74,7 @@ module.exports = {
     connectToDB,
     getUserList,
     getSpecificUser,
-    listAllUser
+    listAllUser,
+    getFeedConversation,
+    postFeedConversation
 }

@@ -6,6 +6,7 @@ function generateToken(user) {
     const payload = {
         subject: user.id,
         email: user.email,
+        username: user.username,
         id: user._id,
         image: user.image
     };

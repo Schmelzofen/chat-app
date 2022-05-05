@@ -5,9 +5,10 @@ import Home from './components/pages/Home';
 import Profilepage from "./components/pages/Profilepage";
 
 import Header from "./components/partials/Header";
+import SideNavigation from "./components/partials/SideNavigation";
+import FeedCont from './components/pages/FeedCont';
 
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -23,8 +24,10 @@ function App() {
       {!userAuth.token ? <Auth /> :
         <>
           <Header />
+          <SideNavigation />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/feed" element={<FeedCont />} />
             <Route path="/profile/:id" element={<Profilepage />} />
           </Routes>
         </>

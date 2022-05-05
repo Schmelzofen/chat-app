@@ -100,7 +100,7 @@ export const UserContextProvider = (props) => {
         token,
         isLoading,
         error,
-        getSpecificUser
+        getSpecificUser,
     }
 
     return (
