@@ -323,3 +323,55 @@ header div a {
         }
     }
 }
+
+// Breakpoints for a width of 375px
+@media only screen and (max-width: 376px) {
+    .authFlex{
+        min-height: 75vh;
+    }
+    .AuthContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .hero{
+        h1{
+            font-size: 40px;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+    .formContainer{
+        height: 350px;
+        width: 300px;
+    }
+    .login, .registration{
+        form{
+            input{
+                margin-bottom: 10px;
+            }
+            button{
+                margin: 0 0 25px 0;
+            }
+        }
+    }
+    .createAccount{
+        button{
+            width: 60%;
+        }
+    }
+    .registration {
+        form {
+            input{
+                &:nth-of-type(4){
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    .forgotPassword{
+        a{
+            margin: 5px 0 10px 0;
+        }
+    }
+}
