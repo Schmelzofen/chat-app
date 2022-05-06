@@ -15,6 +15,7 @@ import {
 
 import UserContext from './components/store/contextProvider';
 import { useContext } from 'react';
+import Messages from './components/partials/Messages';
 
 function App() {
   const userAuth = useContext(UserContext);
@@ -28,6 +29,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/feed" element={<FeedCont />} />
+            <Route path="/messages" element={<Messages />} />
             <Route path="/profile/:id" element={<Profilepage />} />
           </Routes>
         </>
