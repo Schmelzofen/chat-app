@@ -6,8 +6,15 @@ const { generateToken } = require("./loginController");
 async function registerController(req, res) {
     let db = await connectToDB();
     let userList = await db.collection("users").find().toArray();
-    let user = req.body;
-    let doesUserExist = userList.find(element => element.email === user.email);
+    let user = {
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
+        image: "https://via.placeholder.com/150",
+        friendsId: [],
+        conversations: []
+    }
+    let doesUserExist = userList.find(element => element.email === user.email && element.username === user.username);
     if (doesUserExist) {
         return res.status(400).send({ error: "User already exists" })
     } else {

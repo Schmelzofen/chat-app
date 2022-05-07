@@ -8,6 +8,7 @@ const SideNavigation = () => {
                     <li><Link to={"/"}>Home</Link></li>
                     <li><Link to={"/feed"}>Feed</Link></li>
                     <li><Link to={"/messages"}>Messages</Link></li>
+                    <li><Link to={"/users"}>Users</Link></li>
                 </ul>
             </nav>
         </aside>
